@@ -1,27 +1,33 @@
+import os
 import requests
 from telebot import types
 import random
 import telebot
-from datetime import date ,timedelta ,time
+from datetime import date, timedelta, time
 import time
-import telebot
+
+TOKEN = os.environ.get("TOKEN")
+app = telebot.TeleBot(TOKEN)
+
 ssss = 5089553588
-app = teleapp.Teleapp("5688348631:AAH39NZzm_ntJHzNBqBc13ZJNPOIFgGba1w")
 p3 = types.InlineKeyboardMarkup()
-p5 = types.InlineKeyboardButton(text = "[!] 𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝗔𝗹𝗺𝗼𝗿𝘁𝗮𝗴𝗲𝗹",url="t.me/AlmortagelTech")
-A1 = types.InlineKeyboardButton(text = "اوامر الحماية .",callback_data="A1")
-A2 = types.InlineKeyboardButton(text = "اوامر التسلية .",callback_data="A2")
-A3 = types.InlineKeyboardButton(text = "اوامر الالعاب .",callback_data="A3")
-A4 = types.InlineKeyboardButton(text = "اوامر الموسيقى ",callback_data="A4")
+p5 = types.InlineKeyboardButton(text="[!] 𓏺𝙎𝙊𝙐𝙍𝘾𝞝 𝗔𝗹𝗺𝗼𝗿𝘁𝗮𝗴𝗲𝗹", url="t.me/AlmortagelTech")
+A1 = types.InlineKeyboardButton(text="اوامر الحماية .", callback_data="A1")
+A2 = types.InlineKeyboardButton(text="اوامر التسلية .", callback_data="A2")
+A3 = types.InlineKeyboardButton(text="اوامر الالعاب .", callback_data="A3")
+A4 = types.InlineKeyboardButton(text="اوامر الموسيقى ", callback_data="A4")
 
 @app.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-  f2 = message.from_user.first_name 
-  t2 = message.from_user.username 
-  app.reply_to(message,text="""*اهلا بك عزيزي - *[{}](t.me/{})،
+    f2 = message.from_user.first_name
+    t2 = message.from_user.username
+    app.reply_to(message, text="""*اهلا بك عزيزي - *[{}](t.me/{})،
 *  في بوت الاوامر، 
 لمعرفة اوامر البوت ارسل الاوامر*
-""".format(f2,t2),disable_web_page_preview=True,parse_mode="markdown")
+""".format(f2, t2), disable_web_page_preview=True, parse_mode="markdown")
+
+# تشغيل البوت
+app.polling()
 
 abod = ["متى تكون البراءه ذئب ؟",
             "هل تتوقع أن يصل البشر لمرحلة من التطور تجعلهم يتنقلون بين الكواكب بسهولة ؟",
