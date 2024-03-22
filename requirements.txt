@@ -2,4 +2,4 @@ pyrogram
 requests
 pyromod
 kvsqlite
-
+telebot
